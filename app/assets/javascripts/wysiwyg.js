@@ -2,7 +2,6 @@ rteName = "richTextField";
 
 // This is a javascript file named wysiwyg.js
 function iFrameOn(){
-	
 	//$('toolbar').load("parts/TopBar.html");
 	richTextField.document.designMode = 'On';
 	$("#richTextField").css("display","block");
@@ -136,7 +135,7 @@ function createTable(){
 		var Code= Math.floor((Math.random() * 100) + 65); 
 		Code=Code+String.fromCharCode( Math.floor((Math.random() * 88) + 66) );
 		Code=Code+ Math.floor((Math.random() * 10) + 1); 
-		var output='<span class="table-options-main" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
+		var output='<span class="table-options-main" id="UITableContainer'+Code+'" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
 
 		for(var i=0; i<col; i++){
 		output=output+"<tr>";
@@ -145,7 +144,7 @@ function createTable(){
 			};
 		output=output+"</tr>";
 		};
-		output=output+'<span class="OptionsTable"><span class="UI-TableButton" id="addCol" onclick="AddCol(\''+Code+'\',false)">Add Column</span> | <span class="UI-TableButton" id="addRow" onclick="AddRow(\''+Code+'\',true)">Add Row</span></span></span>';
+		output=output+'<span class="OptionsTable"><span class="UI-TableButton" id="addCol" onclick="AddCol(\''+Code+'\',true)">Add Column</span> | <span class="UI-TableButton" id="addRow" onclick="AddRow(\''+Code+'\',true)">Add Row</span> | <span class="UI-TableButton" id="RemoveTable" onclick="RemoveTable(\''+Code+'\',true)">Remove Table</span></span></span>';
 		document.getElementById(rteName).contentWindow.document.execCommand('insertHTML', false, output);
 	}
 function createTableWithHeader(){
@@ -154,7 +153,7 @@ function createTableWithHeader(){
 		var Code= Math.floor((Math.random() * 100) + 65); 
 		Code=Code+String.fromCharCode( Math.floor((Math.random() * 88) + 66) );
 		Code=Code+ Math.floor((Math.random() * 10) + 1); 
-		var output='<span class="table-options-main" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
+		var output='<span class="table-options-main" id="UITableContainer'+Code+'" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
 
 		for(var i=0; i<col; i++){
 		output=output+"<tr>";
@@ -167,7 +166,7 @@ function createTableWithHeader(){
 		}
 		output=output+"</tr>";
 		};
-		output=output+'<span class="OptionsTable"><span class="UI-TableButton" id="addCol" onclick="AddCol(\''+Code+'\',true)">Add Column</span> | <span class="UI-TableButton" id="addRow" onclick="AddRow(\''+Code+'\',true)">Add Row</span></span></span>';
+		output=output+'<span class="OptionsTable"><span class="UI-TableButton" id="addCol" onclick="AddCol(\''+Code+'\',true)">Add Column</span> | <span class="UI-TableButton" id="addRow" onclick="AddRow(\''+Code+'\',true)">Add Row</span> | <span class="UI-TableButton" id="RemoveTable" onclick="RemoveTable(\''+Code+'\',true)">Remove Table</span></span></span>';
 	document.getElementById(rteName).contentWindow.document.execCommand('insertHTML', false, output);
 }
 
@@ -211,4 +210,8 @@ function AddCol (a,h) {
 		   var cell = row.cells[y];
 		 }
 	}
+}
+function RemoveTable(a){
+	var TAp='#UITableContainer'+a;
+	$(TAp).remove();
 }

@@ -1,0 +1,27 @@
+table tr td{
+	padding: 2px 5px;
+	border:1px solid #000;
+}
+table{
+	border:1px solid #000;
+	width: 500px;
+	height: 200px;
+}
+.UI-TableButton{
+	position: relative;
+	background-color: #FAFAD2;
+	cursor: pointer;
+}
+.table-options-main{
+	width: 50px;
+}
+.table-options-main:hover > .OptionsTable{
+	display: block;
+}
+.OptionsTable{
+	padding: 0px 10px;
+	background-color: #FAFAD2;
+	display: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
