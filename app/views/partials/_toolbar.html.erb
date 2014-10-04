@@ -1,0 +1,52 @@
+<script type="text/javascript">
+	function action2do (s) {
+		var f="";
+		f=$(s).data("todo");
+		f+="("+$(s).data("value")+")";
+		eval(f);
+		console.log("hola");
+	}</script>
+<nav class="toolbar">
+	<div>
+		<div class="itemD" onclick="undo()"><%= fa_icon "undo"%></div>
+		<div class="itemD" onclick="redo()"><%= fa_icon "repeat"%></div>
+	</div>
+	
+	<div><div class="spacer"></div></div>
+
+	<div>
+		<div class="itemD" onclick="iBold()"><%= fa_icon "bold"%></div>
+		<div class="itemD" onclick="iItalic()"><%= fa_icon "italic"%></div>
+		<div class="itemD" onclick="iUnderline()"><%= fa_icon "underline"%></div>
+	</div>
+
+	<div><div class="spacer"></div></div>
+
+	<div>
+		<div class="itemD" onclick="Left()"><%= fa_icon "align-left"%></div>
+		<div class="itemD" onclick="Center()"><%= fa_icon "align-center"%></div>
+		<div class="itemD" onclick="Right()"><%= fa_icon "align-right"%></div>		
+	</div>
+	
+	<div><div class="spacer"></div></div>
+
+	<div class="customSelect">
+		<select type="none" id="droped" onchange='action2do($( "#droped option:selected" ))'>
+			<option class="itemDD" data-todo="SetSize" data-value="1">Uno</option>
+			<option class="itemDD" data-todo="SetSize" data-value="2">dos</option>
+			<option class="itemDD" data-todo="SetSize" data-value="3">tr</option>
+			<option class="itemDD" data-todo="SetSize" data-value="4">sdf</option>
+			<option class="itemDD" data-todo="SetSize" data-value="5">dsa</option>
+		</select>
+	</div>
+	<div class="customSelect">
+		<select type="none" id="droped" onchange='action2do($( "#droped option:selected" ))'>
+			<option class="itemDD" data-todo="SetSize" data-value="1">Uno</option>
+			<option class="itemDD" data-todo="SetSize" data-value="2">dos</option>
+			<option class="itemDD" data-todo="SetSize" data-value="3">tr</option>
+			<option class="itemDD" data-todo="SetSize" data-value="4">sdf</option>
+			<option class="itemDD" data-todo="SetSize" data-value="5">dsa</option>
+		</select>
+	</div>
+
+</nav>

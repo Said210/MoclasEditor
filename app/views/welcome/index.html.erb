@@ -1,0 +1,21 @@
+<% add='position: relative;margin-left: 45%; left: calc(10% - 5.5in); left: -moz-calc(10% - 5.5in);left: -webkit-calc(10% - 5.5in);border:#000000 1px solid; width:8.5in; height:11in; padding-left:.5in;padding-right:.5in; ' %>
+
+<script type="text/javascript">
+	var rtd=false;
+
+	 var ready;
+	ready = function() {
+	  	if(!rtd){
+	 		rtd=true;
+	   		setTimeout(function(){iFrameOn();}, 5000);
+	   	}
+	};
+
+	$(document).ready(ready);
+	$(document).on('page:load', ready);
+</script>
+
+<%= render "partials/toolbar" %>
+
+<textarea style="display:none;" name="myTextArea" id="myTextArea" cols="100" rows="14"></textarea>
+<iframe name="richTextField" class="rtf" id="richTextField" style="<%=add%>" src="Base"></iframe>

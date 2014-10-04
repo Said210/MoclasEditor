@@ -1,0 +1,101 @@
+$blueLight: #C1CFD9;
+$blueDark: #2E3641;
+$red: #F97E76;
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+}
+nav{
+	position: relative;
+	margin-left: 45%;
+	left: calc(10% - 5.5in);
+	left: -moz-calc(10% - 5.5in);
+	left: -webkit-calc(10% - 5.5in);
+	border:#000000 1px solid;
+	width:8.5in;
+	height: 40px;
+	background-color: $blueDark;
+	color:$blueLight;
+	div{
+		float: left;
+      	background: $blueDark;
+      	border: none;
+	    border-right: 1px solid lighten($blueDark, 10%);
+	    color: $blueLight;
+	    outline: none;
+		&:hover {
+			background: lighten($blueDark, 5%);
+			color: darken($blueLight, 5%);
+		}
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		div{
+			display: inline-block;
+			text-align: center;
+			&:hover {
+          		background: lighten($blueDark, 5%);
+          		color: darken($blueLight, 5%);
+        	}
+		}
+		.itemD{
+			display: inline-block;
+			width: 18px;
+			text-align: center;
+			cursor: pointer;
+			height: 18px;
+			height: 39px;
+			padding-top: 10px;
+			width: 30px;
+			//background-color: #f3f3f3;
+		}
+	}
+}
+
+.spacer{
+	width: 20px;
+}
+
+.customSelect {
+      select {
+        appearance: none;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        -o-appearance:none;
+        border-radius: 0;
+        border: none;
+        background: $blueDark;
+        height: 39px;
+        padding-left: 10px;
+        padding-right: 25px;
+        color: $blueLight;
+        outline: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        option{
+        	appearance: none;
+	        -webkit-appearance:none;
+	        -moz-appearance:none;
+	        -o-appearance:none;
+	        background-color: $blueDark;
+	        color:$blueLight;
+        }
+        &:hover {
+          background: lighten($blueDark, 5%);
+          color: darken($blueLight, 5%);
+        }
+      }
+      
+      &:after {
+        content: "\f0dc";
+        font-family: FontAwesome;
+        color: $blueLight;
+        display: inline-block;
+        margin-right: 15px;
+      }
+    }
