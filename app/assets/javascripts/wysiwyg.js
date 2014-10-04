@@ -1,3 +1,5 @@
+rteName = "richTextField";
+
 // This is a javascript file named wysiwyg.js
 function iFrameOn(){
 	
@@ -70,7 +72,7 @@ function submit_form(){
 	theForm.submit();
 }
 
-rteName = "richTextField";
+
 function rteInsertHTML(html) {
 if (document.all) {
 var oRng = document.getElementById(rteName).contentWindow.document.selection.createRange();
@@ -186,28 +188,27 @@ function AddRow(a,header){
 		var TAp='#UITable'+a;
 		$(TAp).append(output);
 	}
-
-	function AddCol (a,h) {
-		var TAp='UITable'+a;
-		var table = document.getElementById(TAp);
-		var rowLength = table.rows.length;
-		for(var i=0; i<rowLength; i+=1){
-		  var row = table.rows[i];
-		  if(!h){
+function AddCol (a,h) {
+	var TAp='UITable'+a;
+	var table = document.getElementById(TAp);
+	var rowLength = table.rows.length;
+	for(var i=0; i<rowLength; i+=1){
+		 var row = table.rows[i];
+		 if(!h){
+		  $(row).append('<td>Lorem</td>');
+		 }else{
+		  if(i!=0){
 		  	$(row).append('<td>Lorem</td>');
 		  }else{
-		  	if(i!=0){
-		  		$(row).append('<td>Lorem</td>');
-		  	}else{
-		  		//alert("is 1");
-		  		var colValue=$("#Header"+a).attr('colspan');
-		  		//alert(colValue);
-		  		$("#Header"+a).attr('colspan',parseInt(colValue)+1);
-		  	}
+		  	//alert("is 1");
+		  	var colValue=$("#Header"+a).attr('colspan');
+		  	//alert(colValue);
+		  	$("#Header"+a).attr('colspan',parseInt(colValue)+1);
 		  }
-		  var cellLength = row.cells.length;
-		  for(var y=0; y<cellLength; y+=1){
-		    var cell = row.cells[y];
-		  }
-		}
+		 }
+		 var cellLength = row.cells.length;
+		 for(var y=0; y<cellLength; y+=1){
+		   var cell = row.cells[y];
+		 }
 	}
+}

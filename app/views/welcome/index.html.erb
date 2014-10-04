@@ -14,8 +14,18 @@
 	$(document).ready(ready);
 	$(document).on('page:load', ready);
 </script>
+<style>
+	.cont{
+		position: absolute;
+		width: 100%;
+		height: auto;
+		left: 0px;
+		top: 100px;
+	}
+</style>
+<div class="cont">
+	<%= render "partials/toolbar" %>
 
-<%= render "partials/toolbar" %>
-
-<textarea style="display:none;" name="myTextArea" id="myTextArea" cols="100" rows="14"></textarea>
-<iframe name="richTextField" class="rtf" id="richTextField" style="<%=add%>" src="Base"></iframe>
+	<textarea style="display:none;" name="myTextArea" id="myTextArea" cols="100" rows="14"></textarea>
+	<iframe name="richTextField" class="rtf" id="richTextField" style="<%=add%>" src="Base"></iframe>
+</div>
