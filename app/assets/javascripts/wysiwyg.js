@@ -40,10 +40,10 @@ function iHorizontalRule(){
 	richTextField.document.execCommand('inserthorizontalrule',false,null);
 }
 function iUnorderedList(){
-	richTextField.document.execCommand("InsertOrderedList", false,"newOL");
+	richTextField.document.execCommand("InsertUnorderedList", false,"newOL");
 }
 function iOrderedList(){
-	richTextField.document.execCommand("InsertUnorderedList", false,"newUL");
+	richTextField.document.execCommand("InsertOrderedList", false,"newUL");
 }
 function iLink(){
 	var linkURL = prompt("Enter the URL for this link:", "http://"); 

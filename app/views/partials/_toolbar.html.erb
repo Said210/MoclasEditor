@@ -33,11 +33,25 @@
 	<div class="customSelect">
 		<select type="none" id="droped" onchange='action2do($( "#droped option:selected" ))'>
 			<option class="itemDD" data-todo="SetSize" data-value="1">Uno</option>
-			<option class="itemDD" data-todo="SetSize" data-value="2">dos</option>
-			<option class="itemDD" data-todo="SetSize" data-value="3">tr</option>
-			<option class="itemDD" data-todo="SetSize" data-value="4">sdf</option>
-			<option class="itemDD" data-todo="SetSize" data-value="5">dsa</option>
+			<option class="itemDD" data-todo="SetSize" data-value="2">Dos</option>
+			<option class="itemDD" data-todo="SetSize" data-value="3">Tres</option>
+			<option class="itemDD" data-todo="SetSize" data-value="4">Cuatro</option>
+			<option class="itemDD" data-todo="SetSize" data-value="5">Cinco</option>
 		</select>
+	</div>
+
+	<div><div class="spacer"></div></div>
+
+	<div>
+		<div class="itemD" onclick="iOrderedList()"><%= fa_icon "list-ol"%></div>
+		<div class="itemD" onclick="iUnorderedList()"><%= fa_icon "list-ul"%></div>
+	</div>
+	
+		<div><div class="spacer"></div></div>
+
+	<div>
+		<div class="itemD" onclick="iLink()"><%= fa_icon "chain"%></div>
+		<div class="itemD" onclick="iUnLink()"><%= fa_icon "unlink"%></div>
 	</div>
 
 </nav>
