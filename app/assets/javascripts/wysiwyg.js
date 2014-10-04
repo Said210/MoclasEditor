@@ -19,15 +19,13 @@ function SetSize(a){
 	richTextField.document.execCommand('FontSize',false,a);
 }
 function iForeColor(){
-	//var color = prompt('Define a basic color or apply a hexadecimal color code for advanced colors:', '');
-	var color=document.getElementById("ColorPicker").value;
-	richTextField.document.execCommand('ForeColor',false,color);
+	$('#iForeColor').trigger("click");
 }
+
 function iBackColor(){
-	//var color = prompt('Define a basic color or apply a hexadecimal color code for advanced colors:', '');
-	var color=document.getElementById("ColorPicker2").value;
-	richTextField.document.execCommand('BackColor',false,color);
+	$('#iBackColor').trigger("click");
 }
+
 function Center(){
 	richTextField.document.execCommand('justifyCenter',false,null)
 }
@@ -214,4 +212,20 @@ function AddCol (a,h) {
 function RemoveTable(a){
 	var TAp='#UITableContainer'+a;
 	$(TAp).remove();
+}
+
+/*****************************************************/
+/************************CATCHERS********************/
+/*****************************************************/
+
+function changeF() {
+	var color=document.getElementById("iForeColor").value;
+	richTextField.document.execCommand('ForeColor',false,color);
+	$('#ForeColor').css('color',color);
+}
+
+function changeB() {
+	var color=document.getElementById("iBackColor").value;
+	richTextField.document.execCommand('BackColor',false,color);
+	$('#BackColor').css('background-color',color);
 }
